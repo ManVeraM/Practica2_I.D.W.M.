@@ -1,8 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Practica2_IDWM.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+var options = new DbContextOptionsBuilder<DataContext>()
+    .UseSqlite("Data Source= proyecto.db")
+    .Options;
+
+builder.Services.AddDbContext<DataContext>(opt =>
+    opt.UseSqlite("Data Source = proyecto.db"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

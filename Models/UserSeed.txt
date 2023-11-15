@@ -1,0 +1,42 @@
+{
+  "Id": 1,
+  "Name": "Manuel",
+  "LastName": "Vera",
+  "Email": "Manuel.vera@alumnos.ucn.cl",
+  "City": "Antofagasta",
+  "Country": "Chile",
+  "Resumen": "Descripción del usuario",
+  "Framework" [
+    {
+        "Framework": "pyspark"
+        "level": 5 
+    },
+     {
+        "Framework": "sql"
+        "level": 3 
+    }
+
+  ]
+    "Framework" [
+    {
+        "Framework": "pyspark"
+        "level": 5 
+    },
+     {
+        "Framework": "sql"
+        "level": 3 
+    }
+
+  ],
+  "Hobbie":[
+    {
+        "Hobbie": "wrestling"
+        "Descrition": "aguante las luchitas"
+    },
+    {
+        "Hobbie": "Futbol"
+        "Descrition": "aguante el pumita"
+    }
+  ]
+
+}

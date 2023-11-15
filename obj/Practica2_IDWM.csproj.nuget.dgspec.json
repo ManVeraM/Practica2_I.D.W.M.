@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {}
+    "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {
+    "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
+        "projectUniqueName": "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
         "projectName": "Practica2_IDWM",
-        "projectPath": "C:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
+        "projectPath": "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manve\\Practica2_IDWM\\obj\\",
+        "outputPath": "c:\\Users\\manve\\Practica2_IDWM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,12 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
