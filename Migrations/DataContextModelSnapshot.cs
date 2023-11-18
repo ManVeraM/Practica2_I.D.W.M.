@@ -23,13 +23,16 @@ namespace Practica2_IDWM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Level")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Level")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.Property<long?>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");

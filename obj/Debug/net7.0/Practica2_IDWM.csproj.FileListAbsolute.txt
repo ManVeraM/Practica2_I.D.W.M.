@@ -173,3 +173,6 @@ D:\repos\practica2 idwm\Practica_2_IDWM\obj\Debug\net7.0\refint\Practica2_IDWM.d
 D:\repos\practica2 idwm\Practica_2_IDWM\obj\Debug\net7.0\Practica2_IDWM.pdb
 D:\repos\practica2 idwm\Practica_2_IDWM\obj\Debug\net7.0\Practica2_IDWM.genruntimeconfig.cache
 D:\repos\practica2 idwm\Practica_2_IDWM\obj\Debug\net7.0\ref\Practica2_IDWM.dll
+D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\frontend\package-lock.json
+D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\frontend\package.json
+D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\frontend\public\manifest.json

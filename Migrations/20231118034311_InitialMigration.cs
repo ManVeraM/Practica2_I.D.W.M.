@@ -33,7 +33,8 @@ namespace Practica2_IDWM.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Level = table.Column<int>(type: "INTEGER", nullable: false),
+                    Level = table.Column<string>(type: "TEXT", nullable: true),
+                    Year = table.Column<int>(type: "INTEGER", nullable: false),
                     UserId = table.Column<long>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>

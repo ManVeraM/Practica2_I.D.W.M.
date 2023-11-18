@@ -13,8 +13,8 @@ function App() {
     // Realizar la solicitud a la API utilizando Axios
     axios.get(apiUrl)
       .then(response => {
-        console.log(response.data);
-        setUserData(response.data);
+        console.log(response);
+        setUserData(response);
       })
       .catch(error => {
         // Manejar errores si la solicitud falla

@@ -1,42 +1,34 @@
 {
-  "Id": 1,
-  "Name": "Manuel",
-  "LastName": "Vera",
-  "Email": "Manuel.vera@alumnos.ucn.cl",
-  "City": "Antofagasta",
-  "Country": "Chile",
-  "Resumen": "Descripción del usuario",
-  "Framework" [
+  "name": "Manuel",
+  "lastname": "Vera",
+  "email": "Manuel.vera@alumnos.ucn.cl",
+  "city": "Antofagasta",
+  "country": "Chile",
+  "summary": "Descripción del usuario",
+  "frameworks": [
     {
-        "Framework": "pyspark"
-        "level": 5 
+      "id": 1,
+      "name": "pyspark",
+      "level": "Alto",
+      "year": 2022
     },
-     {
-        "Framework": "sql"
-        "level": 3 
-    }
-
-  ]
-    "Framework" [
     {
-        "Framework": "pyspark"
-        "level": 5 
-    },
-     {
-        "Framework": "sql"
-        "level": 3 
+      "id": 2,
+      "name": "sql",
+      "level": "Alto",
+      "year": 2019
     }
-
   ],
-  "Hobbie":[
+  "hobbies": [
     {
-        "Hobbie": "wrestling"
-        "Descrition": "aguante las luchitas"
+      "id": 1,
+      "name": "wrestling",
+      "description": "aguante las luchitas"
     },
     {
-        "Hobbie": "Futbol"
-        "Descrition": "aguante el pumita"
+      "id": 2,
+      "name": "Futbol",
+      "description": "aguante el pumita"
     }
   ]
-
 }

@@ -11,7 +11,7 @@ using Practica2_IDWM.Models;
 namespace Practica2_IDWM.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231118001800_InitialMigration")]
+    [Migration("20231118034311_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,13 +25,16 @@ namespace Practica2_IDWM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Level")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Level")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.Property<long?>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
