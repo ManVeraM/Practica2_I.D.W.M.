@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FHMCjs2RXDlzCIISU20370OoV1ufrzxhWxyeCsqVd9QcxqQbR78CFJKuMEsCTWHRuEY8Ha4LaKG3pyeLZFExVg==",
+  "dgSpecHash": "Bzy5iyvEVSDQHB6kOo0lTWFI4CPWKDccJDPHYxF9tbeeNn5Kl0WMih5E8PSw+W0z+UVP9Qo232EC0FMfO3sERA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
+  "projectFilePath": "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\Practica2_IDWM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manve\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
@@ -64,7 +64,11 @@
     "C:\\Users\\manve\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\manve\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\manve\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\manve\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\manve\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\manve\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\manve\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

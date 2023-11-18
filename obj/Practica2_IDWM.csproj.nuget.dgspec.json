@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {}
+    "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\Practica2_IDWM.csproj": {}
   },
   "projects": {
-    "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj": {
+    "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\Practica2_IDWM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
+        "projectUniqueName": "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\Practica2_IDWM.csproj",
         "projectName": "Practica2_IDWM",
-        "projectPath": "c:\\Users\\manve\\Practica2_IDWM\\Practica2_IDWM.csproj",
+        "projectPath": "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\Practica2_IDWM.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\manve\\Practica2_IDWM\\obj\\",
+        "outputPath": "D:\\repos\\practica2 idwm\\Practica_2_IDWM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -78,6 +78,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -86,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

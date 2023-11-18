@@ -13,7 +13,7 @@ public class User
 
     public string? Country { get; set; }
 
-    public string? Resumen { get; set; }
+    public string? Summary { get; set; }
 
      public List<Hobbie>? Hobbies { get; set; }
     public List<Framework>? Frameworks { get; set; }

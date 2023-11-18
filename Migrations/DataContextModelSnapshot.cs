@@ -19,7 +19,7 @@ namespace Practica2_IDWM.Migrations
 
             modelBuilder.Entity("Practica2_IDWM.Models.Framework", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -41,7 +41,7 @@ namespace Practica2_IDWM.Migrations
 
             modelBuilder.Entity("Practica2_IDWM.Models.Hobbie", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -82,7 +82,7 @@ namespace Practica2_IDWM.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Resumen")
+                    b.Property<string>("Summary")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

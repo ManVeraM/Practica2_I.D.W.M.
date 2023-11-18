@@ -129,7 +129,7 @@ namespace Practica2.Controllers
                 Email = userProfile.Email,
                 City = userProfile.City,
                 Country = userProfile.Country,
-                Summary = userProfile.Resumen,
+                Summary = userProfile.Summary,
                 Frameworks = userProfile.Frameworks,
                 Hobbies = userProfile.Hobbies
             };
