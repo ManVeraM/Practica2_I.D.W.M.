@@ -22,3 +22,5 @@ For the frontend:
   Run the project, with 
     npm start.
   It will be hosted on http://localhost:3000.
+
+  La seed de datos se encuentra en la carpeta models y debe ser cargada desde postman o swagger mediante una peticion post 
