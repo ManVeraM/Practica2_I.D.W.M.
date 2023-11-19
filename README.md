@@ -14,7 +14,6 @@ For the backend
 
 For the frontend:
   How to run
-  Make sure to have Node.js installed. Version 18 will work.
   Use the following command to enter the frontend folder:
     cd frontend
   Install dependencies, with the following command in the terminal
