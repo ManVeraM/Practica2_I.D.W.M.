@@ -21,14 +21,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy  =>
-                      {
-                          policy.WithOrigins("http://localhost:3000", "http://localhost:8081")
+                    policy  =>
+                    {
+                        policy.AllowAnyOrigin()
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
-
-
-                      });
+                    });
 });
 
 var app = builder.Build();

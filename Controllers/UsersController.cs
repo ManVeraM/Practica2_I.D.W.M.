@@ -138,44 +138,36 @@ namespace Practica2.Controllers
             
             return Ok(jsonResponse);
         }
-        
+                
         [HttpPut("{userId}/hobbies/{hobbieId}")]
         public async Task<IActionResult> UpdateUserHobbie(long userId, long hobbieId, Hobbie updatedHobbie)
         {
-            var user = await _context.Users.FindAsync(userId);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            var hobbie = user.Hobbies.FirstOrDefault(h => h.Id == hobbieId);
+            var hobbie = await _context.Hobbies.FirstOrDefaultAsync(h => h.Id == hobbieId);
             if (hobbie == null)
             {
-                return NotFound();
+                return NotFound("Hobbie no encontrado");
             }
 
-            hobbie = updatedHobbie;
+            hobbie.Name = updatedHobbie.Name;
+            hobbie.Description = updatedHobbie.Description;
+
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
         [HttpPut("{userId}/frameworks/{frameworkId}")]
-        public async Task<IActionResult> UpdateUserFramework(long userId, long frameworkId, Framework updatedFramework)
+        public async Task<IActionResult> UpdateUserFramework(long userId, int frameworkId, Framework updatedFramework)
         {
-            var user = await _context.Users.FindAsync(userId);
-            if (user == null)
-            {
-                return NotFound();
-            }
 
-            var framework = user.Frameworks.FirstOrDefault(f => f.Id == frameworkId);
+            var framework = await _context.Frameworks.FirstOrDefaultAsync(f => f.Id == frameworkId);
             if (framework == null)
             {
-                return NotFound();
+                return NotFound("no existe el framework");
             }
-
-            framework = updatedFramework;
+            framework.Name = updatedFramework.Name;
+            framework.Level = updatedFramework.Level;
+            framework.Year = updatedFramework.Year;
             await _context.SaveChangesAsync();
 
             return NoContent();

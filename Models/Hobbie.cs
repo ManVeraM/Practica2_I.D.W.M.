@@ -7,6 +7,4 @@ public class Hobbie
 
     public string? Description { get; set; }
 
-
-
 }

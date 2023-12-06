@@ -15,14 +15,15 @@ export default function App() {
   const [editedFramework, setEditedFramework] = useState({});
   const [editedHobbie, setEditedHobbie] = useState({});
   const [editedUserInfo, setEditedUserInfo] = useState({});
-  const user = {
+  const [user, setUser] = useState({}); 
+  /*const user = {
     "name": "Manuel",
     "lastname": "Vera",
     "email": "Manuel.vera@alumnos.ucn.cl",
     "city": "Antofagasta",
     "country": "Chile",
     "summary": "Descripción del usuario",
-    "frameworks": [
+    "frameworks": [ 
       {
         "id": 1,
         "name": "pyspark",
@@ -48,29 +49,29 @@ export default function App() {
         "description": "aguante el pumita"
       }
     ]
-  }
+  }*/
 
-    /*useEffect(() => {
-    axios.get('http://localhost:5161/api/Users/profile')
+  useEffect(() => {
+
+    const apiUrl = 'http://localhost:5161/api/Users/profile';
+
+    axios.get(apiUrl)
       .then(response => {
-        try {
-          console.log(response);
-          setData(response);
-        } catch (error) {
-          console.log(error);
-        }
+        console.log(response);
+        setUser(response.data);
       })
       .catch(error => {
-        console.log(error);
+
+        console.error('Error al obtener datos de la API', error);
       });
-  }, []);*/
+  }, []); 
 
 
   const FrameworkItem = ({ item, onPress, backgroundColor, textColor }) => (
     <TouchableOpacity onPress={() => handleEditPress(item, 'framework')} style={[styles.item, { backgroundColor }]}>
       <Text style={[styles.title, { color: textColor }]}>{item.name}</Text>
-      <Text>Level: {item.level}</Text>
-      <Text>Year: {item.year}</Text>
+      <Text>Nivel: {item.level}</Text>
+      <Text>Año: {item.year}</Text>
       {/* Agrega otros campos según tus necesidades para frameworks */}
     </TouchableOpacity>
   );
@@ -78,7 +79,7 @@ export default function App() {
   const HobbieItem = ({ item, onPress, backgroundColor, textColor }) => (
     <TouchableOpacity onPress={() => handleEditPress(item, 'hobbie')} style={[styles.item, { backgroundColor }]}>
       <Text style={[styles.title, { color: textColor }]}>{item.name}</Text>
-      <Text>Description: {item.description}</Text>
+      <Text>Descripcion: {item.description}</Text>
       {/* Agrega otros campos según tus necesidades para hobbies */}
     </TouchableOpacity>
   );
@@ -115,6 +116,8 @@ export default function App() {
     setUserEditModalVisible(!isUserEditModalVisible);
     // Preenlazar los valores actuales antes de realizar cambios
     setEditedUserInfo({
+      name: user.name,
+      lastname: user.lastname,
       email: user.email,
       city: user.city,
       country: user.country,
@@ -162,7 +165,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text style={styles.subHeader}>{user.name + " " + user.lastname + ",\n" + user.city + ", " + user.country}</Text>
       <Text style={{textAlign: "center"}}>{user.summary} </Text>
-      <Text style={styles.subHeader}>Habilidades y hobbies</Text>
+      <Text style={styles.subHeader}>Habilidades y hobbies </Text>
         <View style={styles.listContainer}>
           <View style={styles.list}>
 
@@ -211,7 +214,7 @@ export default function App() {
                 value={editedFramework.year ? editedFramework.year.toString() : ''}
                 onChangeText={(text) => setEditedFramework({ ...editedFramework, year: parseInt(text) })}
               />
-              <Button title="Guardar Cambios" onPress={handleEditFramework} />
+              <Button title="Guardar " onPress={handleEditFramework} />
               <Button title="Cancelar" onPress={toggleFrameworkEditModal} />
             </View>
           </Modal>
@@ -250,6 +253,18 @@ export default function App() {
           >
             <View style={styles.modalContainer}>
               <Text style={styles.modalTitle}>Editar Información del Usuario</Text>
+              <TextInput
+                style={styles.modalInput}
+                placeholder="Name"
+                value={editedUserInfo.name}
+                onChangeText={(text) => setEditedUserInfo({ ...editedUserInfo, name: text })}
+              />
+              <TextInput
+                style={styles.modalInput}
+                placeholder="Lastname"
+                value={editedUserInfo.lastname}
+                onChangeText={(text) => setEditedUserInfo({ ...editedUserInfo, lastname: text })}
+              />
               <TextInput
                 style={styles.modalInput}
                 placeholder="Email"
