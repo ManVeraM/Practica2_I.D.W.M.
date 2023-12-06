@@ -6,9 +6,6 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-
-
-
 export default function App() {
   
   const user = {
@@ -82,6 +79,7 @@ export default function App() {
   const [selectedFrameworkId, setSelectedFrameworkId] = useState(null);
   const [selectedHobbieId, setSelectedHobbieId] = useState(null);
   
+  
 
   const renderFrameworkItem = ({ item }) => {
     const backgroundColor = item.id === selectedFrameworkId ? '#6e3b6e' : '#f9c2ff';
@@ -112,26 +110,28 @@ export default function App() {
   };
   return (
     <SafeAreaView style={styles.container}>
-    <View style={styles.listContainer}>
-      <View style={styles.list}>
-        <Text style={styles.listTitle}>Frameworks</Text>
-        <FlatList
-          data={user.frameworks}
-          renderItem={renderFrameworkItem}
-          keyExtractor={item => item.id.toString()}
-          extraData={selectedFrameworkId}
-        />
-      </View>
-      <View style={styles.list}>
-        <Text style={styles.listTitle}>Hobbies</Text>
-        <FlatList
-          data={user.hobbies}
-          renderItem={renderHobbieItem}
-          keyExtractor={item => item.id.toString()}
-          extraData={selectedHobbieId}
-        />
-      </View>
-    </View>
+      <Text style={styles.subHeader}>{user.name + " " + user.lastname + ",\n" + user.city + ", " + user.country}</Text>
+      <Text style={{textAlign: "center"}}>{user.summary} </Text>
+      <Text style={styles.subHeader}>Habilidades y hobbies</Text>
+        <View style={styles.listContainer}>
+          <View style={styles.list}>
+
+            <FlatList
+              data={user.frameworks}
+              renderItem={renderFrameworkItem}
+              keyExtractor={item => item.id.toString()}
+              extraData={selectedFrameworkId}
+            />
+          </View>
+          <View style={styles.list}>
+            <FlatList
+              data={user.hobbies}
+              renderItem={renderHobbieItem}
+              keyExtractor={item => item.id.toString()}
+              extraData={selectedHobbieId}
+            />
+          </View>
+        </View>
   </SafeAreaView>
 
     
@@ -163,6 +163,14 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 1,
+  },
+  subHeader: {
+    backgroundColor : "#2089dc",
+    color : "white",
+    textAlign : "center",
+    paddingVertical : 5,
+    marginBottom : 10,
+    fontSize : 24,
   },
 
 });
