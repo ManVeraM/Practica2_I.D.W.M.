@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
 
-    const apiUrl = 'https://localhost:7251/api/users/profile';
+    const apiUrl = 'http://localhost:5161/api/Users/profile';
 
     axios.get(apiUrl)
       .then(response => {

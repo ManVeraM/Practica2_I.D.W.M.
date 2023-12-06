@@ -135,8 +135,38 @@ namespace Practica2.Controllers
             };
 
             // Devuelve el JSON como resultado
+            
             return Ok(jsonResponse);
         }
         
+        [HttpPut("{id}/hobbies")]
+        public async Task<IActionResult> UpdateUserHobbie(long id, Hobbie updatedHobbie)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.Hobbies = updatedHobbie;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}/frameworks")]
+        public async Task<IActionResult> UpdateUserFramework(long id, Framework updatedFramework)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.Frameworks = updatedFramework;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
