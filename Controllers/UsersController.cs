@@ -139,31 +139,43 @@ namespace Practica2.Controllers
             return Ok(jsonResponse);
         }
         
-        [HttpPut("{id}/hobbies")]
-        public async Task<IActionResult> UpdateUserHobbie(long id, Hobbie updatedHobbie)
+        [HttpPut("{userId}/hobbies/{hobbieId}")]
+        public async Task<IActionResult> UpdateUserHobbie(long userId, long hobbieId, Hobbie updatedHobbie)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(userId);
             if (user == null)
             {
                 return NotFound();
             }
 
-            user.Hobbies = updatedHobbie;
+            var hobbie = user.Hobbies.FirstOrDefault(h => h.Id == hobbieId);
+            if (hobbie == null)
+            {
+                return NotFound();
+            }
+
+            hobbie = updatedHobbie;
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        [HttpPut("{id}/frameworks")]
-        public async Task<IActionResult> UpdateUserFramework(long id, Framework updatedFramework)
+        [HttpPut("{userId}/frameworks/{frameworkId}")]
+        public async Task<IActionResult> UpdateUserFramework(long userId, long frameworkId, Framework updatedFramework)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(userId);
             if (user == null)
             {
                 return NotFound();
             }
 
-            user.Frameworks = updatedFramework;
+            var framework = user.Frameworks.FirstOrDefault(f => f.Id == frameworkId);
+            if (framework == null)
+            {
+                return NotFound();
+            }
+
+            framework = updatedFramework;
             await _context.SaveChangesAsync();
 
             return NoContent();

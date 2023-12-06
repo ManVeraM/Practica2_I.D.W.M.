@@ -179,3 +179,5 @@ D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\frontend\public\manifes
 D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\mobile\app.json
 D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\mobile\package-lock.json
 D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\mobile\package.json
+D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\package-lock.json
+D:\repos\practica2 idwm\Practica_2_IDWM\bin\Debug\net7.0\package.json
