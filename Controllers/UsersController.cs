@@ -44,32 +44,28 @@ namespace Practica2.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(long id, User user)
+        public async Task<IActionResult> PutUser(long id, User newUser)
         {
-            if (id != user.Id)
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            user.Name = newUser.Name;
+            user.LastName = newUser.LastName;
+            user.Email = newUser.Email;
+            user.City = newUser.City;
+            user.Country = newUser.Country;
+            user.Summary = newUser.Summary;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            await _context.SaveChangesAsync();
             return NoContent();
+
+
+           
+
         }
 
         // POST: api/Users
@@ -124,6 +120,7 @@ namespace Practica2.Controllers
             // Construcción del objeto JSON de respuesta
             var jsonResponse = new
             {
+                id = userProfile.Id,
                 Name = userProfile.Name,
                 Lastname = userProfile.LastName,
                 Email = userProfile.Email,
@@ -139,7 +136,7 @@ namespace Practica2.Controllers
             return Ok(jsonResponse);
         }
                 
-        [HttpPut("{userId}/hobbies/{hobbieId}")]
+        [HttpPut("hobbies/{hobbieId}")]
         public async Task<IActionResult> UpdateUserHobbie(long userId, long hobbieId, Hobbie updatedHobbie)
         {
             var hobbie = await _context.Hobbies.FirstOrDefaultAsync(h => h.Id == hobbieId);
@@ -156,8 +153,8 @@ namespace Practica2.Controllers
             return NoContent();
         }
 
-        [HttpPut("{userId}/frameworks/{frameworkId}")]
-        public async Task<IActionResult> UpdateUserFramework(long userId, int frameworkId, Framework updatedFramework)
+        [HttpPut("frameworks/{frameworkId}")]
+        public async Task<IActionResult> UpdateUserFramework(int frameworkId, Framework updatedFramework)
         {
 
             var framework = await _context.Frameworks.FirstOrDefaultAsync(f => f.Id == frameworkId);

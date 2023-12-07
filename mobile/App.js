@@ -16,40 +16,8 @@ export default function App() {
   const [editedHobbie, setEditedHobbie] = useState({});
   const [editedUserInfo, setEditedUserInfo] = useState({});
   const [user, setUser] = useState({}); 
-  /*const user = {
-    "name": "Manuel",
-    "lastname": "Vera",
-    "email": "Manuel.vera@alumnos.ucn.cl",
-    "city": "Antofagasta",
-    "country": "Chile",
-    "summary": "Descripción del usuario",
-    "frameworks": [ 
-      {
-        "id": 1,
-        "name": "pyspark",
-        "level": "Alto",
-        "year": 2022
-      },
-      {
-        "id": 2,
-        "name": "sql",
-        "level": "Alto",
-        "year": 2019
-      }
-    ],
-    "hobbies": [
-      {
-        "id": 1,
-        "name": "wrestling",
-        "description": "aguante las luchitas"
-      },
-      {
-        "id": 2,
-        "name": "Futbol",
-        "description": "aguante el pumita"
-      }
-    ]
-  }*/
+  const [userId, setUserId] = useState({});
+
 
   useEffect(() => {
 
@@ -59,6 +27,8 @@ export default function App() {
       .then(response => {
         console.log(response);
         setUser(response.data);
+        setUserId(response.data.id);
+
       })
       .catch(error => {
 
@@ -80,7 +50,6 @@ export default function App() {
     <TouchableOpacity onPress={() => handleEditPress(item, 'hobbie')} style={[styles.item, { backgroundColor }]}>
       <Text style={[styles.title, { color: textColor }]}>{item.name}</Text>
       <Text>Descripcion: {item.description}</Text>
-      {/* Agrega otros campos según tus necesidades para hobbies */}
     </TouchableOpacity>
   );
 
@@ -114,7 +83,6 @@ export default function App() {
 
   const toggleUserEditModal = () => {
     setUserEditModalVisible(!isUserEditModalVisible);
-    // Preenlazar los valores actuales antes de realizar cambios
     setEditedUserInfo({
       name: user.name,
       lastname: user.lastname,
@@ -133,22 +101,42 @@ export default function App() {
     setHobbieEditModalVisible(!isHobbieEditModalVisible);
   };
 
-  const handleEditUser = () => {
-    // Implementar la lógica para guardar los cambios del usuario en el servidor
-    console.log('Usuario editado:', editedUserInfo);
-    toggleUserEditModal();
+  const handleEditUser = async () => {
+    if (user && user.id) {
+      try {
+        const response = await axios.put(`http://localhost:5161/api/users/${user.id}`, editedUserInfo);
+  
+        console.log('Usuario editado:', response.data);
+        toggleUserEditModal();
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    } else {
+      console.error('Error: user.id es undefined');
+    }
   };
 
-  const handleEditFramework = () => {
-    // Implementa la lógica para guardar los cambios del framework en el servidor
-    console.log('Framework editado:', editedFramework);
-    toggleFrameworkEditModal();
+  const handleEditFramework = async () => {
+    try {
+      const response = await axios.put(`http://localhost:5161/api/users/frameworks/${editedFramework.id}`, editedFramework);
+  
+      console.log('Framework editado:', response.data);
+      toggleFrameworkEditModal();
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+  
 
-  const handleEditHobbie = () => {
-    // Implementa la lógica para guardar los cambios del hobbie en el servidor
-    console.log('Hobbie editado:', editedHobbie);
-    toggleHobbieEditModal();
+  const handleEditHobbie = async () => {
+    try {
+      const response = await axios.put(`http://localhost:5161/api/users/hobbies/${editedHobbie.id}`, editedHobbie);
+  
+      console.log('Hobbie editado:', response.data);
+      toggleHobbieEditModal();
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const handleEditPress = (item, type) => {
@@ -158,6 +146,9 @@ export default function App() {
     } else if (type === 'hobbie') {
       setEditedHobbie(item);
       toggleHobbieEditModal();
+    } else if (type === 'user') {
+      setEditedUserInfo(item);
+      toggleUserEditModal();
     }
   };
 
