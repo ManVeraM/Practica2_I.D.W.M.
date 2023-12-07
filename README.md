@@ -23,4 +23,18 @@ For the frontend:
     npm start.
   It will be hosted on http://localhost:3000.
 
-  La seed de datos se encuentra en la carpeta models y debe ser cargada desde postman o swagger mediante una peticion post 
+
+  For mobile:
+    How to run
+    Use the following command to enter the frontend folder:
+      cd mobile
+    Install dependencies, with the following command in the terminal
+      npm install.
+    Update the backend server address or domain name in app.js
+    Run the project, with 
+      npx expo start
+    and press w
+    the page will automatically load 
+
+
+the user seed is in the model folder 

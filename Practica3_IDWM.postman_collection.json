@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ed8c3fe3-2986-4fdf-91c2-6eb925f06c1b",
+		"name": "Practica3_IDWM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26768677"
+	},
+	"item": [
+		{
+			"name": "Get profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5161/api/Users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5161",
+					"path": [
+						"api",
+						"Users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar hobbie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5161/api/Users/1/hobbies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5161",
+					"path": [
+						"api",
+						"Users",
+						"1",
+						"hobbies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar framework",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"string\",\r\n  \"level\": \"string\",\r\n  \"year\": 1999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5161/api/Users/1/frameworks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5161",
+					"path": [
+						"api",
+						"Users",
+						"1",
+						"frameworks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"email\": \"string\",\r\n  \"city\": \"string\",\r\n  \"country\": \"string\",\r\n  \"summary\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5161/api/Users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5161",
+					"path": [
+						"api",
+						"Users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Manuel\",\r\n  \"lastname\": \"Vera\",\r\n  \"email\": \"Manuel.vera@alumnos.ucn.cl\",\r\n  \"city\": \"Antofagasta\",\r\n  \"country\": \"Chile\",\r\n  \"summary\": \"Descripción del usuario\",\r\n  \"frameworks\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"pyspark\",\r\n      \"level\": \"Alto\",\r\n      \"year\": 2022\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"sql\",\r\n      \"level\": \"Alto\",\r\n      \"year\": 2019\r\n    }\r\n  ],\r\n  \"hobbies\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"wrestling\",\r\n      \"description\": \"aguante las luchitas\"\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"name\": \"Futbol\",\r\n      \"description\": \"aguante el pumita\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5161/api/Users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5161",
+					"path": [
+						"api",
+						"Users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
