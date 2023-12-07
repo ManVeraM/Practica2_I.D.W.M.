@@ -33,8 +33,8 @@ For the frontend:
     Update the backend server address or domain name in app.js
     Run the project, with 
       npx expo start
-    and press w
+    and press w, it will only run this way by some reason, if you run it via android all petitions will be denied
     the page will automatically load 
 
 
-the user seed is in the model folder 
+the user seed is in the model folder
